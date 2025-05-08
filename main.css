@@ -1,95 +1,172 @@
-body {
-    background-image: url("accests/blackjackbg.jpg");
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .game {
-    /*background: #1c1c1c;*/
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  .cards {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-  }
-  
-  .card {
-    width: 6rem;
-    height: 9rem;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    /*align-items: center;*/
-    justify-content: center;
-    font-size: 18px;
-    gap: 28px;
-    padding: 5px;
-  }
-  .span3{
-    text-align: right;
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
 
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-bottom: 20px;
+}
+
+/* Your Existing CSS */
+body {
+  background-image: url("accests/blackjackbg.jpg");
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 96vh;
+}
+
+.game {
+  max-width: 600px;
+  margin: auto;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.container {
+  position: relative;
+  width: 6rem;
+  height: 9rem;
+  perspective: 1000px;
+  animation: fly-in 0.7s ease-out forwards;
+  margin: 0 3px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  transform: rotateY(180deg); /* <-- Show back side initially */
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.front {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  gap: 28px;
+}
+
+.front .span1 {
+  text-align: left;
+}
+
+.front .span2 {
+  margin: 8px;
+  font-size: 28px;
+}
+
+.front .span3 {
+  text-align: right;
+}
+
+.back {
+  background-image: url("accests/deck1.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.flipped .card {
+  transform: rotateY(0deg);
+}
+
+button {
+  height: 3rem;
+  width: 6rem;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 16px;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.deck-area {
+  width: 6rem;
+  height: 9rem;
+  background-image: url("accests/deck1.jpg");
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  transform: rotate(90deg);
+}
+
+@keyframes fly-in {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0;
   }
-  .span1{
-    text-align: left;
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
   }
-  .span2{
-    margin: 8px;
-    font-size: 28px;
-  }
-  .card.back {
-    background-color: #333;
-    color: #333;
-    background-image: url("accests/deck1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  button {
-    height: 3rem;
-    width: 6rem;
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    border: none;
-    border-radius: 16px;
-  }
-  button:hover {
-    background-color: red;
-    color: white;
-  }
-  /* for deck*/
-  .deck-area {
-  
-  }
-  .controls{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  .deck-area {
-    width: 6rem;
-    height: 9rem;
-    background-image: url("accests/deck1.jpg");
-    border: none;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    transform: rotate(90deg);
-    transform-origin: center;
-  }
-  
- 
+}
+.player{
+  position: relative;
+}
+
+#message {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+

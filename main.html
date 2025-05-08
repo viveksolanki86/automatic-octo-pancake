@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traditional Blackjack</title>
-  <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blackjack Game</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+  <!-- Modal Section -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3 class="heading-modal">Welcome to Blackjack!</h3>
+      <button id="restart-btn">Start Game</button>
+    </div>
+  </div>
+
   <div class="game">
-    <!-- <h1>🃏 Traditional Blackjack</h1> -->
-
-     
-
     <div class="dealer">
       <h2>Dealer</h2>
       <div id="dealer-cards" class="cards"></div>
       <p id="dealer-score">Score: ?</p>
     </div>
-    
-    <div class="controls">
-        <button id="hit-btn" class="btn">Hit</button>
-       
-     
-    <div class="deck-area">
-        
-      </div>
 
-      <button id="stand-btn" class="btn">Stand</button>  
+    <div class="controls">
+      <button id="hit-btn" class="btn">Hit</button>
+      <div class="deck-area" id="deck-area"></div>
+      <button id="stand-btn" class="btn">Stand</button>
     </div>
 
     <div class="player">
-      <h2>Player</h2>
-      <div id="player-cards" class="cards"></div>
-      <p id="player-score">Score: 0</p>
-    </div>
+        <h2>Player</h2>
+          <h3 id="message">Your Message Here</h3>
+        <div id="player-cards" class="cards"></div>
+        <p id="player-score">Score: 0</p>
+      </div>
+      
 
-   
-    <div class="strat">
-        <button id="restart-btn">Restart</button>
-    </div>
+    
 
-    <h3 id="message"></h3>
+    
   </div>
 
   <script src="main.js"></script>
