@@ -33,9 +33,13 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 96vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game {
+  display: none;
   max-width: 600px;
   margin: auto;
 }
@@ -45,23 +49,22 @@ body {
   justify-content: center;
   gap: 12px;
   margin: 10px 0;
+  position: relative; /* Add this line */
 }
-
 .container {
   position: relative;
   width: 6rem;
   height: 9rem;
   perspective: 1000px;
-  animation: fly-in 0.7s ease-out forwards;
+  animation: fly-in 1s ease-out forwards; /* adjust time here */  
   margin: 0 3px;
 }
-
 .card {
   width: 100%;
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
+  transition: transform 0.6s ease-in-out; /* <-- Important */
   transform: rotateY(180deg); /* <-- Show back side initially */
 }
 
@@ -104,10 +107,10 @@ body {
   background-position: center;
   transform: rotateY(180deg);
 }
-
 .flipped .card {
-  transform: rotateY(0deg);
+ transform: rotateY(0deg); /* Flip to show front face */
 }
+
 
 button {
   height: 3rem;
@@ -140,22 +143,31 @@ button:hover {
   background-position: center;
   transform: rotate(90deg);
 }
-
 @keyframes fly-in {
   0% {
-    transform: translate(0, 0) scale(0.5);
+    transform: translate(-300px, -200px) rotate(-45deg) scale(0.3);
     opacity: 0;
   }
+  50% {
+    transform: translate(-100px, -50px) rotate(-15deg) scale(0.6);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(30px, 20px) rotate(5deg) scale(0.9);
+    opacity: 0.9;
+  }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) rotate(0deg) scale(1);
     opacity: 1;
   }
 }
+
 .player{
   position: relative;
 }
 
 #message {
+  width: 15rem;
   position: absolute;
   top: 0;
   left: 50%;
@@ -168,5 +180,73 @@ button:hover {
   font-size: 18px;
   z-index: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.coin-box {
+  position: absolute;
+  bottom: 20px; /* instead of top: 20px */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 1s ease-in-out, opacity 0.8s ease;
+  z-index: 5;
+}
+
+
+.coin-box.hidden {
+  transform: translateX(-50%) translateY(200%);
+  opacity: 0;
+}
+
+.coin-box h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.coins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.coin {
+  padding: 8px 12px;
+  border-radius: 50%;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.coin:hover {
+  transform: scale(1.1);
+}
+.coin:active {
+  background-color: red;
+}
+
+#deal-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#deal-btn:hover {
+  background-color: darkgreen;
+}
+
+#gamemony {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 10px;
 }
 
