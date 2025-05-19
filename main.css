@@ -161,6 +161,35 @@ button:hover {
     opacity: 1;
   }
 }
+/* for endthe game */
+.endAnimation{
+   animation: fly-out 1s ease-out forwards;
+}
+
+@keyframes fly-out
+ {
+  0% {
+     transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  25%{
+     transform: translate(30px, -20px) rotate(2.5deg) scale(0.9);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(60px, -40px) rotate(5deg) scale(0.75);
+    opacity: 0.8;
+  }
+  75% {
+     transform: translate(100px, -50px) rotate(-15deg) scale(0.6);
+    opacity: 0.7;
+  }
+  100% {
+     transform: translate(300px, -200px) rotate(-45deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
 
 .player{
   position: relative;

@@ -229,7 +229,7 @@ window.onload = function () {
   function endGame(msg, number) {
     gameOver = true;
     showMessage(msg, number);
-    messageEl.style.display = "block";
+   
    
   }
 
@@ -254,9 +254,18 @@ window.onload = function () {
     localStorage.setItem("totalMoney", totalMoney);
     updateMoneyDisplay();
     
+     messageEl.style.display = "block";
+    const allplayerCards=document.querySelectorAll(".container")
+     allplayerCards.forEach((e ,index) => {
+         setTimeout(() => {
+             e.classList.add("endAnimation");
+         }, 400 *  index);
+
+        })
+
     setTimeout(() => {
   coinBox.classList.remove("hidden");
-  game.style.display="none";
+  // game.style.display="none";
 }, 3300); // Coin box will slide back up after 3 seconds
 
     coinBox.classList.remove("hidden");
