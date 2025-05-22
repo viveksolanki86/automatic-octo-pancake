@@ -1,4 +1,75 @@
 /* Modal Styles */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.start-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.start-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+.player-select {
+  margin-bottom: 20px;
+}
+
+.player-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.player-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  background-color: #444;
+  color: white;
+  border: 2px solid #777;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.player-btn.selected {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+#start-button {
+  background-color: #28a745;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#start-button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+/* yaha tak css */
 .modal {
   display: none; /* Hidden by default */
   position: fixed;

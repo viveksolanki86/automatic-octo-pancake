@@ -8,6 +8,28 @@
 </head>
 <body>
   <!-- Modal Section -->
+   <!-- START SCREEN -->
+<div id="start-screen" class="start-screen">
+  <h1>🃏 Blackjack Game</h1>
+  <p>Select number of players and start the game!</p>
+
+  <div class="player-select">
+    <label>Select Players:</label>
+    <div class="player-buttons">
+      <button class="player-btn" data-players="1">1</button>
+      <button class="player-btn" data-players="2">2</button>
+      <button class="player-btn" data-players="3">3</button>
+      <button class="player-btn" data-players="4">4</button>
+      <button class="player-btn" data-players="5">5</button>
+    </div>
+  </div>
+
+  <button id="start-button" disabled>Start Game</button>
+</div>
+
+<!-- Your existing game -->
+
+
   <div id="modal" class="modal">
     <div class="modal-content">
       <h3 class="heading-modal">Welcome to Blackjack!</h3>
@@ -15,27 +37,9 @@
     </div>
   </div>
 
-  <div class="game">
-    <div class="dealer">
-      <h2>Dealer</h2>
-      <div id="dealer-cards" class="cards"></div>
-      <p id="dealer-score">Score: ?</p>
-    </div>
+  <!-- Game container jisme JS se layout create hoga -->
+<div id="game-container" style="display: none;"></div>
 
-    <div class="controls">
-      <button id="hit-btn" class="btn">Hit</button>
-      <div class="gamemony" id="gamemony">hii</div>
-      <button id="stand-btn" class="btn">Stand</button>
-    </div>
-
-    <div class="player">
-        <h2>Player</h2>
-          <h3 id="message">Your Message Here</h3>
-        <div id="player-cards" class="cards"></div>
-        <p id="player-score">Score: 0</p>
-      </div>
-      
-  </div>
   <div id="coin-box" class="coin-box">
     <h3>Total Money: <span id="total-money"></span></h3>
     <div class="coins">
