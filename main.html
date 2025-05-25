@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blackjack Game</title>
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="theme.css">
 </head>
 <body>
   <!-- Modal Section -->
@@ -30,10 +31,41 @@
 <!-- Your existing game -->
 
 
-  <div id="modal" class="modal">
+  <div id="modal" class="modal1">
     <div class="modal-content">
       <h3 class="heading-modal">Welcome to Blackjack!</h3>
       <button id="restart-btn">Start Game</button>
+    </div>
+  </div>
+  <!-- 25 toggle theme  -->
+    <button id="theme-toggle-btn">Change Theme</button>
+
+  <div id="theme-selector" class="hidden">
+    <div class="theme-thumb" data-theme="1" style="background-image: url('accests/bg1.jpg')"></div>
+    <div class="theme-thumb" data-theme="2" style="background-image: url('accests/bg2.jpg')"></div>
+    <div class="theme-thumb" data-theme="3" style="background-image: url('accests/bg3.jpg')"></div>
+    <div class="theme-thumb" data-theme="4" style="background-image: url('accests/bg4.jpg')"></div>
+    <div class="theme-thumb" data-theme="5" style="background-image: url('accests/bg5.jpg')"></div>
+    <!-- Add more if needed -->
+  </div>
+ <!-- yaha tak -->
+  <!--  rulles -->
+     <button id="rules-btn">📜 Rules</button>
+
+  <!-- Modal Overlay -->
+  <div id="rules-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">×</button>
+      <h2>Blackjack Rules</h2>
+      <ul>
+        <li>Each player is dealt two cards.</li>
+        <li>Cards 2-10 are worth their face value.</li>
+        <li>J, Q, K are worth 10. Aces are worth 1 or 11.</li>
+        <li>Goal is to get as close to 21 as possible without going over.</li>
+        <li>Player can "Hit" to take more cards or "Stand" to stop.</li>
+        <li>Dealer must hit until 17 or more.</li>
+        <li>Blackjack (A + 10 card) beats all other 21s.</li>
+      </ul>
     </div>
   </div>
 
@@ -54,7 +86,7 @@
     <button id="deal-btn">Deal</button>
   </div>
 
-
   <script src="main.js"></script>
+  <script src="theme.js"></script>
 </body>
 </html>
